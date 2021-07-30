@@ -1,0 +1,19 @@
+{
+  "searchTextHint": "ادخل كلمة البحث",
+  "textCodeInList": "كود الدولة: ",
+  "textFieldMessage": "اكتب رسالتك",
+  "textFieldNumber": "رقم الوتساب",
+  "sendButton": "ارسل",
+  "titleAppBarHome": "WhatsApp Go",
+  "titleAppBarSetting": "الإعدادات",
+  "changeCountrySetting": "تغيير الدولة",
+  "changeLanguageSetting": "تغيير لغة التطبيق",
+  "changeThemeSetting": "تغيير الثيم",
+  "darkTheme": "مظلم",
+  "liteTheme": "ساطع",
+  "alertTitle": "تنبيه",
+  "alertContent": "تم تغيير الإعدادات بنجاح",
+  "alertCancel": "إلغاء",
+  "alertOk": "موافق"
+
+}

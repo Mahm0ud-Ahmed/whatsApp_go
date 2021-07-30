@@ -1,0 +1,19 @@
+{
+  "searchTextHint": "Enter the search word",
+  "textCodeInList": "Code: ",
+  "textFieldMessage": "Message",
+  "textFieldNumber": "WhatsApp Number",
+  "sendButton": "Send Message",
+  "titleAppBarHome": "WhatsApp Go",
+  "titleAppBarSetting": "Setting",
+  "changeCountrySetting": "Change Country",
+  "changeLanguageSetting": "Change Language",
+  "changeThemeSetting": "Change Theme",
+  "darkTheme": "Dark",
+  "liteTheme": "Lite",
+  "alertTitle": "Alert",
+  "alertContent": "Settings changed successfully",
+  "alertCancel": "Cancel",
+  "alertOk": "Ok"
+
+}
