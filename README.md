@@ -1,6 +1,6 @@
 # whats_app_go
 
-A new Flutter application.
+//ScreenShoot
 
 ## Getting Started
 
