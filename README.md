@@ -1,7 +1,7 @@
 # whats_app_go
 
 ## ScreenShoot
-![alt text]([url=https://ibb.co/GshCNNW][img]https://i.ibb.co/GshCNNW/Screenshot-1627667613.png[/img][/url])
+![alt text](https://i.ibb.co/GshCNNW/Screenshot-1627667613.png)
 
 
 ## Getting Started
