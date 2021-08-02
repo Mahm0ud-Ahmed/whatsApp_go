@@ -76,11 +76,9 @@ class _CountryListState extends State<CountryList> {
                                 .saveAllDataInStorage()
                                 .then((isFlag) {
                               if (isFlag) {
-                                CountryScreenCubit.get(context)
-                                    .getAllDataFromStorage();
                                 Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(builder: (context) {
-                                    return HomeScreen(currentCountry);
+                                    return HomeScreen();
                                   }),
                                   (route) => false,
                                 );

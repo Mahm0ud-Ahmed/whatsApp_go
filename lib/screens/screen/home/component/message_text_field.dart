@@ -31,7 +31,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
             label:
                 AppLocal.getCurrentValueTranslate(context, 'textFieldMessage'),
             lines: 5,
-            icon: const Icon(
+            preIcon: const Icon(
               Icons.message,
               color: Colors.indigo,
               size: 32,

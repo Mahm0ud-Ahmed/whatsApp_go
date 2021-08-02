@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_whats_app/logic/country_screen_logic/country_screen_cubit.dart';
 import 'package:go_whats_app/shared/component/component.dart';
+import 'package:go_whats_app/shared/component/constant.dart';
 import 'package:go_whats_app/shared/data/repository/lang/app_local.dart';
 import 'package:go_whats_app/shared/go_whats_app_state.dart';
 
@@ -15,6 +16,12 @@ class NumberTextField extends StatefulWidget {
 
 class _NumberTextFieldState extends State<NumberTextField> {
   TextEditingController numberController = TextEditingController();
+
+  @override
+  void initState() {
+    CountryScreenCubit.get(context).getAllDataFromStorage();
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -30,10 +37,12 @@ class _NumberTextFieldState extends State<NumberTextField> {
         return customTextField(
           controller: numberController,
           label: AppLocal.getCurrentValueTranslate(context, 'textFieldNumber'),
-          icon: const Icon(
-            FontAwesomeIcons.whatsappSquare,
-            size: 32,
-            color: Colors.green,
+          preIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              '$countryCode | $countryDial',
+              style: const TextStyle(height: 2.5),
+            ),
           ),
           keyboardType: TextInputType.number,
           onChange: (String number) {

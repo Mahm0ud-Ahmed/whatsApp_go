@@ -15,8 +15,8 @@ import 'screens/screen/country/country_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await StoragePref.getInstance();
-  selectedLanguage = StoragePref.getValue('current_lang') as String;
-  // StoragePref.removeValue('current_lang');
+  selectedLanguage = StoragePref.getValue('current_lang') as String ?? 'en';
+  // StoragePref.clearStorage();
   print(selectedLanguage);
   final String dataFilePath = getCountryFilePath(selectedLanguage);
   Bloc.observer = MyBlocObserver();
@@ -32,8 +32,7 @@ class WhatsAppGo extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<CountryScreenCubit>(
       create: (context) =>
-          CountryScreenCubit(Repository(path: _countryFilePath))
-            ..getAllDataFromStorage(),
+          CountryScreenCubit(Repository(path: _countryFilePath)),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -49,7 +48,7 @@ class WhatsAppGo extends StatelessWidget {
           Locale('en', ''),
           Locale('ar', ''),
         ],
-        locale: Locale(selectedLanguage ?? 'en', ''),
+        locale: Locale(selectedLanguage, ''),
 /*        localeResolutionCallback: (currentLocal, supportedLocal) {
           if (currentLocal != null) {
             return AppLocal.extractRequiredLanguage(

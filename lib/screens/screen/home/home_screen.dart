@@ -4,10 +4,6 @@ import 'package:go_whats_app/screens/screen/settings/settings_screen.dart';
 import 'package:go_whats_app/shared/data/model/country_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  final CountryModel countryModel;
-
-  const HomeScreen(this.countryModel);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -12,12 +12,12 @@ const String code = 'code';
 const String nameCountry = 'country';
 const String dial = 'dial';
 
-String appLanguage = '';
-String appTheme = '';
+String appLanguage;
+String appTheme;
 
-dynamic countryDial = '';
-dynamic countryName = '';
-dynamic countryCode = '';
+dynamic countryDial;
+dynamic countryName;
+dynamic countryCode;
 
 String selectedLanguage;
 
