@@ -17,6 +17,7 @@ class _MessageTextFieldState extends State<MessageTextField> {
       lines: 6,
       label:
           Text(AppLocal.getCurrentValueTranslate(context, 'textFieldMessage')),
+      fillColor: Colors.white,
       onChange: (String message) =>
           CountryCubit.get(context).setMessage(message),
       preIcon: const Icon(
