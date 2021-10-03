@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_whats_app/screens/screen/splash_screen/splash_screen.dart';
-import 'package:go_whats_app/shared/component/constant.dart';
-import 'package:go_whats_app/shared/component/storage_pref.dart';
-import 'package:go_whats_app/shared/data/repository/lang/app_local.dart';
-import 'package:go_whats_app/shared/data/repository/repository.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
-import 'logic/country_screen_logic/country_screen_cubit.dart';
+import 'package:go_whats_app/constant.dart';
+import 'package:go_whats_app/core/app_localization.dart';
+import 'package:go_whats_app/data/local/repository/local_repository.dart';
+import 'package:go_whats_app/data/local/storage_pref.dart';
+import 'logic/cubit/country_cubit.dart';
 import 'observer.dart';
-import 'screens/screen/country/country_screen.dart';
+import 'screens/country/country_screen.dart';
 
-// ignore: avoid_void_async
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await StoragePref.getInstance();
   selectedLanguage = StoragePref.getValue('current_lang') as String ?? 'en';
   // StoragePref.clearStorage();
-  print(selectedLanguage);
   final String dataFilePath = getCountryFilePath(selectedLanguage);
   Bloc.observer = MyBlocObserver();
   runApp(WhatsAppGo(dataFilePath));
@@ -30,15 +26,15 @@ class WhatsAppGo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CountryScreenCubit>(
+    return BlocProvider<CountryCubit>(
       create: (context) =>
-          CountryScreenCubit(Repository(path: _countryFilePath)),
+          CountryCubit(LocalRepository(path: _countryFilePath)),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const SplashScreen(),
+        home: const CountryScreen(),
         localizationsDelegates: const [
           AppLocal.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -58,5 +54,15 @@ class WhatsAppGo extends StatelessWidget {
         },*/
       ),
     );
+  }
+}
+
+String getCountryFilePath(String lang) {
+  String result;
+  if (lang != null) {
+    lang == 'en' ? result = englishFilePath : result = arabicFilePath;
+    return result;
+  } else {
+    return result = englishFilePath;
   }
 }
