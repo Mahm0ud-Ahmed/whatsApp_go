@@ -5,6 +5,7 @@ import 'package:go_whats_app/constant.dart';
 import 'package:go_whats_app/core/app_localization.dart';
 import 'package:go_whats_app/data/local/repository/local_repository.dart';
 import 'package:go_whats_app/data/local/storage_pref.dart';
+import 'package:go_whats_app/screens/splash_screen/splash_screen.dart';
 import 'logic/cubit/country_cubit.dart';
 import 'observer.dart';
 import 'screens/country/country_screen.dart';
@@ -34,7 +35,7 @@ class WhatsAppGo extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const CountryScreen(),
+        home: const SplashScreen(),
         localizationsDelegates: const [
           AppLocal.delegate,
           GlobalMaterialLocalizations.delegate,

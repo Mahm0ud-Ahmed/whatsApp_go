@@ -40,6 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: TextLiquidFill(
           text: 'WhatsApp Go!',
+          loadDuration: const Duration(seconds: 2),
           waveColor: Colors.green,
           boxBackgroundColor: Colors.grey.shade50,
           textAlign: TextAlign.center,
