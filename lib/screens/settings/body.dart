@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'change_country.dart';
-import 'language_item.dart';
+import 'widget/change_country.dart';
+import 'widget/language_item.dart';
 
 class Body extends StatelessWidget {
   const Body({Key key}) : super(key: key);
