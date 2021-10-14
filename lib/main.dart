@@ -8,7 +8,6 @@ import 'package:go_whats_app/data/local/storage_pref.dart';
 import 'package:go_whats_app/screens/splash_screen/splash_screen.dart';
 import 'logic/cubit/country_cubit.dart';
 import 'observer.dart';
-import 'screens/country/country_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +38,7 @@ class WhatsAppGo extends StatelessWidget {
         localizationsDelegates: const [
           AppLocal.delegate,
           GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
+          // GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: const [
           Locale('en', ''),
